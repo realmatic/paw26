@@ -1,0 +1,11 @@
+**/__pycache__/
+**/__init__.py
+assets
+media
+db.sqlite3
+.env
+**/settings.prod.py
+**/settings.py
+**/geckodriver.log
+**/debug.log
+**/*.swp
