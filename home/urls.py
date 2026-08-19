@@ -21,7 +21,7 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    # path('archive/', include('archive.urls')),
+    path('archive/', include('archive.urls')),
     path('support/', admin.site.urls)
 ]
 

@@ -2,28 +2,40 @@
 https://realmatic.pythonanywhere.com/
 https://realmatic.pythonanywhere.com/support/
 
-? sqlplus only, ignore MySQL
-? move away from assets/ to media
-? start archive/record
-? realmatic studiolab homepage
+? detail page, list page, testing
+# https://docs.djangoproject.com/en/6.1/intro/tutorial02/
+
+260818
+#using sqlite, not MySQL
+$ python manage.py startapp archive
+# vi urls.py, views.py, models.py, settings.py (add app config)
+$ python manage.py makemigrations archive
+$ python manage.py migrate
+$ python manage.py shell
+>>> Record.objects.all()
+>>> import datetime
+>>> from django.utils import timezone
+>>> r = Record(title="TARVA Crate Stand", category='WO', production_date=timezone.make_aware(datetime.datetime(2026, 8, 1, 13, 12, 50)))
+>>> r.save()
+>>> r.delete()
 
 260817
-# https://help.pythonanywhere.com/pages/FollowingTheDjangoTutorial/ 
-$ mkvirtualenv env26 --python=/usr/bin/python3.10 
-$ workon env26 
-$ deactivate 
+# https://help.pythonanywhere.com/pages/FollowingTheDjangoTutorial/
+$ mkvirtualenv env26 --python=/usr/bin/python3.10
+$ workon env26
+$ deactivate
 
-$ pip install Django 
-$ pip install mysqlclient python-dotenv 
+$ pip install Django
+$ pip install mysqlclient python-dotenv
 $ pip uninstall mysqlclient
-$ django-admin startproject home 
+$ django-admin startproject home
 
-$ mv home sandbox 
-$ update /var/www/realmatic_pythonanywhere_com_wsgi.py 
+$ mv home sandbox
+$ update /var/www/realmatic_pythonanywhere_com_wsgi.py
 
-$ vi webapp/settings.py 
+$ vi webapp/settings.py
 import os
-from dotenv import load_dotenv 
+from dotenv import load_dotenv
 load_dotenv(BASE_DIR / '.env')
 SECRET_KEY = os.getenv('SECRET_KEY')
 ALLOWED_HOSTS = os.getenv('WEB_NAME').split(',')
@@ -58,10 +70,6 @@ DATABASES = {
 }
 
 # STATIC_URL = "static/"
-STATICFILES_DIRS = (
-    BASE_DIR / 'assets',
-)
-STATIC_URL = '/assets/'
 # for prod
 # if DEBUG is False:
 STATIC_URL = os.getenv('ASSETS_URL')
@@ -75,10 +83,11 @@ $ vi home/urls.py index, support
 
 python manage.py createsuperuser
 
-# MySQL console 
+# MySQL console
 > drop database `realmatic$default`
 $ python manage.py migrate
 $ python manage.py createsuperuser
+# add staff user
 
 $ git init
 $ git add .
