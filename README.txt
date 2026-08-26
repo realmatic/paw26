@@ -2,7 +2,11 @@
 https://realmatic.pythonanywhere.com/
 https://realmatic.pythonanywhere.com/support/
 
-? detail page, list page, testing
+? enable user login
+? tests.rb
+
+260826
+archive detail page, list page, testing
 # https://docs.djangoproject.com/en/6.1/intro/tutorial02/
 
 260819

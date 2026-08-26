@@ -12,6 +12,8 @@
     {% for record in records %}
         <li>
             <a href="/archive/record_view/{{record.id}}">{{record.title}}</a>
+            <a href="{% url 'record_update' record.pk %}">Edit</a> |
+            <a href="{% url 'record_delete' record.pk %}">Delete</a>
         </li>
     {% endfor %}
 </ul>
