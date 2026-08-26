@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="https://unpkg.com/photoswipe@5.3.8/dist/photoswipe.css"/>
+<link rel="stylesheet" href="https://unpkg.com/photoswipe-dynamic-caption-plugin/photoswipe-dynamic-caption-plugin.css">
+
+<script type='module'>
+import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe/dist/photoswipe-lightbox.esm.js';
+import PhotoSwipeDynamicCaption from 'https://unpkg.com/photoswipe-dynamic-caption-plugin';
+
+const smallScreenPadding = {
+  top: 0, bottom: 0, left: 0, right: 0
+};
+const largeScreenPadding = {
+  top: 30, bottom: 30, left: 0, right: 0
+};
+const lightbox = new PhotoSwipeLightbox({
+  gallerySelector: '#gallery',
+  childSelector: '.pswp-gallery__item',
+
+        // optionaly adjust viewport
+  paddingFn: (viewportSize) => {
+  return viewportSize.x < 700 ? smallScreenPadding : largeScreenPadding
+  },
+  pswpModule: () => import('https://unpkg.com/photoswipe')
+});
+
+const captionPlugin = new PhotoSwipeDynamicCaption(lightbox, {
+  mobileLayoutBreakpoint: 700,
+  type: 'auto',
+  mobileCaptionOverlapRatio: 1
+});
+lightbox.init();
+</script>

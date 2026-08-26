@@ -1,0 +1,27 @@
+{% load static %}
+
+<!-- Footer -->
+<hr/>
+<footer class="footer" id="contact">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-12 ps-5">
+	      <!--- p class='lead'>realmatic.com</p --->
+          {% now "Y" as current_year %}
+	  <p class='copyright text-muted'><!--- 版权所有---> &copy; {{current_year}} All Rights Reserved</p>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 ps-5">
+		<a style='text-decoration:none' target='_blank' href='/disclaimer'><!--- 免责声明 ---> Disclaimer</a>
+        </div>
+
+    </div>
+</div>
+</footer>
+  <!--Footer-->
+  {% if cookieConsent %}
+    {% include 'support/_cookieConsent.html' %}
+  {% endif %}
+</body>
+</html>

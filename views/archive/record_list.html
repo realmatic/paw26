@@ -1,0 +1,21 @@
+{% extends 'support/layout.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<h3 class='text-center pt-4'>Records</h3>
+
+<div class='row ms-4'>
+
+<ul>
+    {% for record in records %}
+        <li>
+            <a href="/archive/record_view/{{record.id}}">{{record.title}}</a>
+        </li>
+    {% endfor %}
+</ul>
+
+</div>
+
+{% endblock %}

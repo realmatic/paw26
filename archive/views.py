@@ -3,10 +3,15 @@ from django.http import HttpResponse
 from django.contrib import messages
 
 from django.conf import settings
+from .models import Record
 
-def list(request):
-    return HttpResponse('Records')
+def record_list(request):
+    #return HttpResponse('Records')
+    records = Record.objects.all()
+    return render(request, 'archive/record_list.html', {'records': records})
 
-    #context = {#'records': Logview(group,user).html_list(),
-    #          }
-    #return render(request, 'archive/list.html', context)
+def record_view(request, id):
+    record = Record.objects.get(id=id)
+    return render(request, 'archive/record_view.html', {'record': record})
+
+

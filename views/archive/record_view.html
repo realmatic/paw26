@@ -1,0 +1,31 @@
+{% extends './record_display_layout.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col-1"></div>
+  <div class="col-10">
+    <table><tr><td class='px-4' width='45%'>
+			    <!--- img src="" alt="image" class="img-fluid" --->
+      <td><td class='align-middle px-4' width='55%'>
+		      <h3 class='pb-0 mb-0'> {{record.title}} </h3>
+		      <small class='pt-0 mb-0'><i> {{record.get_category_display}} {{record.production_date}} </i></small>
+		      <p class='py-2'> {{ record.description }}
+      </p>
+      </td>
+    </tr></table>
+
+    <hr class='my-4'>
+    <div class="row pswp-gallery justify-content-center" id="gallery">
+      <h4 class='text-center'>DETAILS</h4>
+      <pre>{{record.procedures}}</pre><br>
+      <pre>{{record.notes}}</pre><br>
+    </div>
+
+  </div>
+  <div class="col-1"></div>
+</div>
+
+{% endblock %}

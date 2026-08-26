@@ -27,6 +27,8 @@ class Record(models.Model):
 
     title = models.CharField(max_length=200)
     production_date = models.DateField(default=datetime.date.today)
+    procedures = models.TextField(blank=True)
+    notes = models.TextField(blank=True)
 
     class Status(models.TextChoices):
         PUBLISH = 'PUB', 'Publish'
@@ -45,20 +47,20 @@ class Record(models.Model):
     def __str__(self):
         return self.title
 
-class Procedure(models.Model):
-    record = models.ForeignKey(Record, on_delete=models.CASCADE)
-    procedure_text = models.CharField(max_length=500)
-    sequence = models.CharField(max_length=3, default='1')
+#class Procedure(models.Model):
+#    record = models.ForeignKey(Record, on_delete=models.CASCADE)
+#    procedure_text = models.CharField(max_length=500)
+#    sequence = models.CharField(max_length=3, default='1')
+#
+#    def __str__(self):
+#        return self.procedure_text
 
-    def __str__(self):
-        return self.procedure_text
-
-class Note(models.Model):
-    record = models.ForeignKey(Record, on_delete=models.CASCADE)
-    note_text = models.CharField(max_length=500)
-
-    def __str__(self):
-        return self.note_text
+#class Note(models.Model):
+#    record = models.ForeignKey(Record, on_delete=models.CASCADE)
+#    note_text = models.CharField(max_length=500)
+#
+#    def __str__(self):
+#        return self.note_text
 
 class Supply(models.Model):
     record = models.ForeignKey(Record, on_delete=models.CASCADE)

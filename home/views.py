@@ -4,6 +4,8 @@ from django.http import HttpResponse
 from django.conf import settings
 
 def index(request):
-    return HttpResponse('home/index')
-    context = {}
-    return render(request, 'index.html', context)
+    return redirect('/archive')
+    #if request.user.is_authenticated:
+    #  return HttpResponse('home/index')
+    #else:
+    #  return redirect('/support')

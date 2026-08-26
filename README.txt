@@ -5,6 +5,12 @@ https://realmatic.pythonanywhere.com/support/
 ? detail page, list page, testing
 # https://docs.djangoproject.com/en/6.1/intro/tutorial02/
 
+260819
+$ python manage.py showmigrations archive
+$ python manage.py migrate archive 0001_initial
+$ python manage.py migrate archive zero
+# model, admin TabularInline, db_field custom
+
 260818
 #using sqlite, not MySQL
 $ python manage.py startapp archive
