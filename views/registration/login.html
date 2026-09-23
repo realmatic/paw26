@@ -1,0 +1,22 @@
+{% extends 'support/layout.html' %}
+
+{% block content %}
+
+<div class='row py-4'>
+  <div class='col-sm-4'> </div>
+  <div class='col-sm-4'>
+    <div class='row text-center'>
+
+<h3>Login</h3>
+<form method='post'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type='submit' value='Login'>
+</form>
+
+    </div>
+  </div>
+  <div class='col-sm-4'> </div>
+</div>
+
+{% endblock %}

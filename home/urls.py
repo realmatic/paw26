@@ -22,6 +22,7 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('archive/', include('archive.urls')),
+    path('user/', include('django.contrib.auth.urls')),
     path('support/', admin.site.urls)
 ]
 

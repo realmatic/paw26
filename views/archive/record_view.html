@@ -7,24 +7,72 @@
 <div class="row">
   <div class="col-1"></div>
   <div class="col-10">
-    <table><tr><td class='px-4' width='45%'>
-			    <!--- img src="" alt="image" class="img-fluid" --->
-      <td><td class='align-middle px-4' width='55%'>
+    <!--- table><tr><td class='px-4' width='45%' --->
+
+<div class='row'>
+    <div class='col-6 px-1'>
+<!--- image gallery --->
+<div class="row pswp-gallery justify-content-center" id="gallery">
+    <div class="col-12 px-1">
+      <div class="pswp-gallery__item">
+	    <a href="{% static '/michellestudio/media/conservation/NEAI/NEAI_1.jpg' %}" data-pswp-width="750" data-pswp-height="1000" target="_blank" >
+		<img src="{% static '/michellestudio/media/conservation/NEAI/NEAI_1.jpg' %}" class="w-100 mb-2" alt="" />
+        </a>
+      </div>
+    </div>
+    <hr class='my-1'>
+    <div class="col-2 px-1">
+      <div class="pswp-gallery__item">
+	      <a href="{% static '/michellestudio/media/conservation/NEAI/NEAI_5.jpg' %}" data-pswp-width="750" data-pswp-height="1000" target="_blank" >
+		<img src="{% static '/michellestudio/media/conservation/NEAI/NEAI_5.jpg' %}" class="w-100 mb-2" alt="" />
+        </a>
+      </div>
+    </div>
+
+    <div class="col-2 px-1">
+      <div class="pswp-gallery__item">
+              <a href="{% static '/michellestudio/media/conservation/NEAI/NEAI_2.jpg' %}" data-pswp-width="750" data-pswp-height="1000" target="_blank" >
+                <img src="{% static '/michellestudio/media/conservation/NEAI/NEAI_2.jpg' %}" class="w-100 mb-2" alt="" />
+        </a>
+      </div>
+    </div>
+
+    <div class="col-2 px-1">
+      <div class="pswp-gallery__item">
+              <a href="{% static '/michellestudio/media/conservation/NEAI/NEAI_3.jpg' %}" data-pswp-width="750" data-pswp-height="1000" target="_blank" >
+                <img src="{% static '/michellestudio/media/conservation/NEAI/NEAI_3.jpg' %}" class="w-100 mb-2" alt="" />
+        </a>
+      </div>
+    </div>
+
+    <div class="col-2 px-1">
+      <div class="pswp-gallery__item">
+              <a href="{% static '/michellestudio/media/conservation/NEAI/NEAI_4.jpg' %}" data-pswp-width="750" data-pswp-height="1000" target="_blank" >
+                <img src="{% static '/michellestudio/media/conservation/NEAI/NEAI_4.jpg' %}" class="w-100 mb-2" alt="" />
+        </a>
+      </div>
+    </div>
+
+</div>
+
+<!--- end image gallery --->
+      </div>
+      <div class='col-6 align-top pt-4 px-1'>
 		      <h3 class='pb-0 mb-0'> {{record.title}} </h3>
 		      <small class='pt-0 mb-0'><i> {{record.get_category_display}} {{record.production_date}} </i></small>
-		      <p class='py-2'> {{ record.description }}
-      </p>
-      </td>
-    </tr></table>
-
+		      <p class='py-2'> {{ record.description }}</p>
+      </div>
+    </div>
     <hr class='my-4'>
     <div class="row pswp-gallery justify-content-center" id="gallery">
-      <h4 class='text-center'>DETAILS</h4>
+      <h5 class='text-center'>PROCEDURE</h5>
       <pre>{{record.procedures}}</pre><br>
+      <h5 class='text-center'>NOTES</h5>
       <pre>{{record.notes}}</pre><br>
     </div>
 
   </div>
+
   <div class="col-1"></div>
 </div>
 
